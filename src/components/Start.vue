@@ -326,7 +326,6 @@ v-if  dom操作
     position: fixed;
     
     bottom: 5rem;
-    
     left: 50%;
     margin-left: -3rem;
     
@@ -343,13 +342,13 @@ v-if  dom操作
         
         display: block;
         
-        width: 2rem;
+        width: 6rem;
         
         margin: 0 auto;
         
         position: relative;
-        
-        top:1.5rem;
+        text-align:center;
+        top:2rem;
     }
     
   }

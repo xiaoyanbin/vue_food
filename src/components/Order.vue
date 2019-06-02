@@ -17,9 +17,9 @@
                     <h3>已点菜品{{list.total_num}}份,合计 : <span class="price">{{list.total_price}}元</span> </h3>
 
 
-                    <button @click="doPay()">
+                    <!-- <button @click="doPay()">
                         支付宝立即支付
-                    </button>
+                    </button> -->
 
                     <br>
                     <br>
@@ -141,7 +141,7 @@
             },
             doWeixinPay(){                                      
                     var order_id=this.list.order_id;
-                    location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx7bf3787c783116e4&redirect_uri=http://b.itying.com?order_id='+order_id+'&response_type=code&scope=snsapi_base#wechat_redirect';
+                    location.href='https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx3a7dd39bfd063865&redirect_uri=https://weixue.minsusuan.com/api/wx/pay?order_id='+order_id+'&response_type=code&scope=snsapi_base#wechat_redirect';
 
            }
         },

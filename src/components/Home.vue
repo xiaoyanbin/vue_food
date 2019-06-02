@@ -345,7 +345,10 @@
         }
     }
     
-    
+    .footer_cart{
+
+        font-size:1.2rem;
+    }
     
     .nav_cate{
         

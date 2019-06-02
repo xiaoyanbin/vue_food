@@ -21,6 +21,17 @@
 					
 				</div>
 				
+               <div>
+                   <ul>
+					
+					
+					<li class="item" v-for="(item,key) in orderlist.order">
+                            {{item.title}}
+					</li>
+                    </ul>
+               </div>
+
+
 				<div class="cart_p_num">
 					
 					<p>购物车中总共有{{totalNum}}个菜</p>
@@ -176,25 +187,19 @@
                   list:[],
                   peopleList:[],
                   allPrice:0,
-                  totalNum:0
+                  totalNum:0,
+                  orderlist:[]
             }
         }
         ,sockets:{   
             addcart: function(){  /*接受服务器广播过来的addcart*/
                 //更新购物车的数据
                 this.getCartData();
-            },  
-            getOrder: function(){  /*接受服务器广播过来的addcart*/
-                //更新购物车的数据
-
-                this.$router.push({path:'/order'})
-               // var api=this.api+'api/addOrder';
-            }              
+            } 
+                        
         }
         ,methods:{
-
                 getCartData(){
-                    
                     //桌子id  桌子号：是扫描二维码从url获取的
 
                     var uid=storage.get('roomid');
@@ -271,23 +276,17 @@
                 ,
                 /*获取总数量 以及总价格*/
                 getTotalResult(){  
-
-
                     var allPrice=0;
                     var totalNum=0;
-
                     for(var i=0;i<this.list.length;i++){
-
                         allPrice+=parseFloat(this.list[i].price*this.list[i].num);
                         totalNum+= parseInt(this.list[i].num);
                     }
 
                     this.allPrice=allPrice;
-
                     this.totalNum=totalNum;
                 },
                 //获取用餐人的信息
-
                 getPeopleInfoList(){
 
                     var uid=storage.get('roomid');
@@ -341,12 +340,21 @@
                         })
 
 
+                },
+                getOrders(){
+                    
+                    var uid=storage.get('roomid');
+                    var api=this.api+'api/getOrder?uid='+uid;
+                    this.$http.get(api).then(response => {
+                        console.log(response.body.result)
+                        this.orderlist= response.body.result[0];
+                    }, response => {
+                        // error callback
+                    });
+
                 }
         },
         mounted(){
-
-
-
             this.getCartData();
             this.getPeopleInfoList();
         },

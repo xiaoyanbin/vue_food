@@ -82,7 +82,7 @@
 
         data () {
             return {
-                 'p_num':'1人',
+                 'p_num':'',
                  'p_mark':'',
                  'api':Config.api,
                  'peopleList':[],
