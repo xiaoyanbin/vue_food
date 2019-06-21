@@ -1,6 +1,8 @@
-# vue-project
+# Vue.js 实现多人点餐，订单同步，在线支付，打印小票功能
 
 > A Vue.js 实现多人点餐，订单同步，在线支付，打印小票功能
+
+
 
 ## Build Setup
 
