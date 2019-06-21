@@ -5,7 +5,7 @@
 访问地址 后面roomid为房间号，不同房间号对应不同的桌
 >https://www.minsusuan.com/#?roomid=a002
 
-
+![](./imgs/er.png)
 
 ## Build Setup
 
