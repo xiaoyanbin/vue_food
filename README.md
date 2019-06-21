@@ -1,6 +1,6 @@
 # vue-project
 
-> A Vue.js project
+> A Vue.js 实现多人点餐，订单同步，在线支付，答应小票功能
 
 ## Build Setup
 
@@ -15,4 +15,3 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
